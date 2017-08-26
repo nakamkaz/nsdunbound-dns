@@ -54,7 +54,8 @@ server:
         interface: ::1
         access-control: 0.0.0.0/0 refuse
         access-control: 127.0.0.0/8 allow
-        access-control: ::0/0 refuse
+        access-control: 192.168.11.0/24 allow
+        access-control: ::0/0 refuse
         access-control: ::1 allow
         do-not-query-localhost: no
         hide-identity: yes
