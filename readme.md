@@ -19,7 +19,7 @@ server:
 remote-control:
         control-enable: yes
 zone:
-        name: "ace.local" 
+        name: "ace.internal" 
         zonefile: "master/zone.ace.internal"
 ```
 
