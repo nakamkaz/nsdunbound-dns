@@ -20,22 +20,22 @@ remote-control:
         control-enable: yes
 zone:
         name: "ace.local" 
-        zonefile: "master/zone.ace.local"
+        zonefile: "master/zone.ace.internal"
 ```
 
 ### 3: put master zone file zone file /var/nsd/zones/master/ ...
 
-/var/nsd/zones/master/zone.ace.local
+/var/nsd/zones/master/zone.ace.internal
 ``` 
 $TTL 86400
-@ SOA localhost. root.ace.local. (
+@ SOA localhost. root.ace.internal. (
                                 2017082600; serial
                                 28800; refresh
                                 14400; retry
                                 3600000; expire
                                 86400;  minimum
                                 )
-ace.local.      IN      NS      ns.ace.local.
+ace.internal.      IN      NS      ns.ace.internal.
 ns              IN      A       192.168.11.17
 master          IN      CNAME   ns
 pointer         IN      CNAME   ns
@@ -65,7 +65,7 @@ remote-control:
         control-use-cert: no
         control-interface: /var/run/unbound.sock
 stub-zone:
-        name: "ace.local"
+        name: "ace.internal"
         stub-addr: 127.0.0.1@10053
 forward-zone:
         name: "."
